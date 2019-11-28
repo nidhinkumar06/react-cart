@@ -39,3 +39,7 @@
 .cart-position{
   padding-top: 9px;
 }
+
+.container{
+  width: 72% !important;
+}

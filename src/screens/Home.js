@@ -3,12 +3,9 @@ import {connect} from 'react-redux'
 import {addToCart, addItems} from '../redux/action';
 import axios from 'axios';
 import store from '../redux/store';
-import { MdShoppingCart } from 'react-icons/md';
-import { map, isNull } from 'lodash';
+import {map, isNull, size} from 'lodash';
 
 import logo from '../images/logo.jpg';
-
-
 
 class Home extends Component {
   constructor(props) {
@@ -17,7 +14,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://services.odata.org/V3/OData/OData.svc/Products').then(response => {
+    axios.get('https://my-bookshop-srv-fluent-platypus.cfapps.eu10.hana.ondemand.com/catalog/Products').then(response => {
       const cartData = map(response.data.value, (data) => {
         return {
           id: data.ID,
@@ -43,28 +40,30 @@ class Home extends Component {
     let itemList = this.props.items.map(item => {
       return (<div className="card" key={item.id}>
         <div className="card-image">
-          <img src={item.img} alt={item.title}/>
-          <span className="card-title">{item.title}</span>
+          <img src={item.img} alt={item.title}/> {
+            isNull(item.discoutinuedDate) && <span to="/" className="btn-floating halfway-fab waves-effect waves-light red" onClick={() => {
+                  this.handleClick(item.id)
+                }}>
+                <i className="material-icons">shopping_cart</i>
+              </span>
+          }
 
-          <span to="/" className="btn-floating halfway-fab waves-effect waves-light red" onClick={() => {
-              this.handleClick(item.id)
-            }}>
-            <i className="material-icons">shopping_cart</i>
-          </span>
         </div>
 
-        {!isNull(item.discoutinuedDate) ? (
-          <div className="card-content">
-            <p>Out of Stock</p>
-          </div>
-        ): (
-          <div className="card-content">
-            <p>{item.desc}</p>
-            <p>
-              <b>Price: {item.price}$</b>
-            </p>
-          </div>
-        )}
+        {
+          !isNull(item.discoutinuedDate)
+            ? (<div className="card-content">
+              <span className="card-title">{item.title}</span>
+              <p>Out of Stock</p>
+            </div>)
+            : (<div className="card-content">
+              <span className="card-title">{item.title}</span>
+              <p>{item.desc}</p>
+              <p>
+                <b>Price: ${item.price}</b>
+              </p>
+            </div>)
+        }
 
       </div>)
     })
@@ -74,6 +73,21 @@ class Home extends Component {
       <div className="box">
         {itemList}
       </div>
+      {size(this.props.items)<=0 &&
+        <h3 className="center">
+          <div class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </h3>
+      }
     </div>)
   }
 
