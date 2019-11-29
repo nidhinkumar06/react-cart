@@ -11,8 +11,24 @@ class Shop extends Component {
   }
 
   
-  componentDidMount() {
+  componentDidMount() {    
     const search = this.props.location.search;
+    if (search) {
+      const filterSearch = search.split("=");
+      const filterType = filterSearch[1];
+      if (filterType !== "all") {
+        const result = filter(this.props.items, {'type':  filterType});
+      this.setState({items: result, search: filterType});
+      } else {
+        this.setState({items: this.props.items})
+      }
+    } else {
+      this.setState({ items: this.props.items, search: "" });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const search = nextProps.location.search;
     if (search) {
       const filterSearch = search.split("=");
       const filterType = filterSearch[1];
