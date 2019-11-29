@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {round} from 'lodash';
 
 class Recipe extends Component {
 
@@ -27,7 +28,7 @@ class Recipe extends Component {
           </label>
         </li>
         <li className="collection-item">
-          <b>Total: ${this.props.total}
+          <b>Total: ${round((this.props.total), 2).toFixed(2)}
           </b>
         </li>
       </div>
