@@ -20,7 +20,9 @@ import organicfrenchfries from '../../images/organicfrenchfries.jpg';
 import organicmash from '../../images/organicmash.jpg';
 import organicsteakfries from '../../images/organicsteakfries.jpg';
 import organicwedges from '../../images/organicwedges.jpg';
-
+import frozentwo from '../../images/frozentwo.png';
+import frozenone from '../../images/frozenone.jpg';
+import dehydrated from '../../images/dehydrated.png';
 
 const INITIAL_STATE = {
   items: [
@@ -36,6 +38,9 @@ const INITIAL_STATE = {
     { id: 9, title: "Organic Wedges", desc: "Wedges (cut in 8) 10 x 1 kg", price: 2, img: organicwedges, discoutinuedDate: null, quantity: 0, type: 'organic' },
     { id: 10, title: "Organic Plain Mash", desc: "Organic Plain Mash 10 x 1 kg", price: 2, img: organicmash, discoutinuedDate: null, quantity: 0, type: 'organic' },
     { id: 11, title: "Organic Flakes", desc: "Organic Flakes 5mm 10 x 1 kg", price: 2, img: organicflakes, discoutinuedDate: null, quantity: 0, type: 'organic' },
+    { id: 12, title: "Belgian Frites", desc: "Frites 10 x 1 kg", price: 2, img: frozenone, discoutinuedDate: null, quantity: 0, type: 'frozen' },
+    { id: 13, title: "Frish Fries", desc: "Chilled Frish Fries", price: 2, img: frozentwo, discoutinuedDate: null, quantity: 0, type: 'frozen' },
+    { id: 14, title: "Pommes Stripes", desc: "Pommes Stripes 3 way cook 2.5 kg", price: 2, img: dehydrated, discoutinuedDate: null, quantity: 0, type: 'dehydrated' },
   ],
   addedItems: [],
   total: 0
