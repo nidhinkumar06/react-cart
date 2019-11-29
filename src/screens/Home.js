@@ -45,10 +45,10 @@ class Home extends Component {
         </p>
         <br />
         <div>
-        <Link to="/account?name=netflix"><img src={c1} alt="Lutosa" className="app-category-image"/></Link>
-        <img src={c2} alt="Lutosa" className="app-category-image"/>
-        <img src={c3} alt="Lutosa" className="app-category-image"/>
-        <img src={c4} alt="Lutosa" className="app-category-image"/>
+        <Link to="/shop?category=frozen"><img src={c1} alt="Lutosa" className="app-category-image"/></Link>
+        <Link to="/shop?category=chilled"><img src={c2} alt="Lutosa" className="app-category-image"/></Link>
+        <Link to="/shop?category=flakes"><img src={c3} alt="Lutosa" className="app-category-image"/></Link>
+        <Link to="/shop?category=organic"><img src={c4} alt="Lutosa" className="app-category-image"/></Link>
         </div>
       </div>
       <img src={footerImg} alt="Lutosa" className="app-home-banner"/>
