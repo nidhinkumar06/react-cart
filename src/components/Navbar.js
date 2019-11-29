@@ -10,6 +10,7 @@ const Navbar = (props) => {
     <div className="container">
       <Link to="/" className="brand-logo">
       <img src={appLogo} alt="Lutosa" />
+      <span className="app-logoName">Shopping Cart</span>
       </Link>
 
       <ul className="right">
