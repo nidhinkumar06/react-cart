@@ -4,6 +4,8 @@ import {addToCart, addItems} from '../redux/action';
 import axios from 'axios';
 import store from '../redux/store';
 import {map, isNull, size} from 'lodash';
+import bannerImg from '../images/banner.jpg';
+import footerImg from '../images/footer.jpg';
 
 import logo from '../images/logo.jpg';
 
@@ -37,57 +39,9 @@ class Home extends Component {
   }
 
   render() {
-    let itemList = this.props.items.map(item => {
-      return (<div className="card" key={item.id}>
-        <div className="card-image">
-          <img src={item.img} alt={item.title}/> {
-            isNull(item.discoutinuedDate) && <span to="/" className="btn-floating halfway-fab waves-effect waves-light red" onClick={() => {
-                  this.handleClick(item.id)
-                }}>
-                <i className="material-icons">shopping_cart</i>
-              </span>
-          }
-
-        </div>
-
-        {
-          !isNull(item.discoutinuedDate)
-            ? (<div className="card-content">
-              <span className="card-title">{item.title}</span>
-              <p>Out of Stock</p>
-            </div>)
-            : (<div className="card-content">
-              <span className="card-title">{item.title}</span>
-              <p>{item.desc}</p>
-              <p>
-                <b>Price: ${item.price}</b>
-              </p>
-            </div>)
-        }
-
-      </div>)
-    })
-
     return (<div className="container">
-      <h3 className="center">Our items</h3>
-      <div className="box">
-        {itemList}
-      </div>
-      {size(this.props.items)<=0 &&
-        <h3 className="center">
-          <div class="preloader-wrapper small active">
-            <div class="spinner-layer spinner-green-only">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
-            </div>
-          </div>
-        </h3>
-      }
+      <img src={bannerImg} alt="Lutosa" className="app-home-banner"/>
+      <img src={footerImg} alt="Lutosa" className="app-home-banner"/>
     </div>)
   }
 
@@ -97,7 +51,6 @@ const mapStateToProps = (state) => {
   return {items: state.cart.items}
 }
 const mapDispatchToProps = (dispatch) => {
-
   return {
     addToCart: (id) => {
       dispatch(addToCart(id))
