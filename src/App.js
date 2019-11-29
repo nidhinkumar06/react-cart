@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {HashRouter, Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './screens/Home'
 import Cart from './screens/Cart'
@@ -8,7 +8,7 @@ import Dashboard from './screens/Dashboard'
 
 class App extends Component {
   render() {
-    return (<BrowserRouter>
+    return (<HashRouter>
       <div className="App">
         <Navbar/>
         <Switch>
@@ -18,7 +18,7 @@ class App extends Component {
           <Route path="/dashboard" component={Dashboard}/>
         </Switch>
       </div>
-    </BrowserRouter>);
+    </HashRouter>);
   }
 }
 

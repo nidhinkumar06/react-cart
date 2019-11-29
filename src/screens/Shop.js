@@ -34,9 +34,9 @@ class Shop extends Component {
       const filterType = filterSearch[1];
       if (filterType !== "all") {
         const result = filter(this.props.items, {'type':  filterType});
-      this.setState({items: result, search: filterType});
+        this.setState({items: result, search: filterType});
       } else {
-        this.setState({items: this.props.items})
+        this.setState({items: this.props.items, search: ""})
       }
     } else {
       this.setState({ items: this.props.items, search: "" });
