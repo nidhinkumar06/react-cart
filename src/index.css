@@ -68,3 +68,15 @@
   width: 100%;
   margin-top: 40px;
 }
+
+.app-category-image {
+  width: 25%;
+}
+
+.app-logoName {
+  color: #AB283A !important;
+  font-weight: bold;
+  position: relative;
+  bottom: 20px;
+  font-size: 1.5rem;
+}
