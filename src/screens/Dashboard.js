@@ -9,7 +9,7 @@ import footerImg from '../images/footer.jpg';
 
 import logo from '../images/logo.jpg';
 
-class Home extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -40,8 +40,7 @@ class Home extends Component {
 
   render() {
     return (<div className="container">
-      <img src={bannerImg} alt="Lutosa" className="app-home-banner"/>
-      <img src={footerImg} alt="Lutosa" className="app-home-banner"/>
+      <p>Dashboard</p>
     </div>)
   }
 
@@ -58,4 +57,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
