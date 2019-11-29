@@ -8,8 +8,35 @@ import {
   ADD_ITEMS
 } from '../actionTypes/cartActions';
 
+import fries from '../../images/fries.jpg';
+import belgianfries from '../../images/belgianfries.jpg';
+import friesyellow from '../../images/friesyellow.jpg';
+import handcutstyle from '../../images/handcutstyle.jpg';
+import shoestrings from '../../images/shoestrings.jpg';
+import steakfries from '../../images/steakfries.jpg';
+import organiccubes from '../../images/organiccubes.jpg';
+import organicflakes from '../../images/organicflakes.jpg';
+import organicfrenchfries from '../../images/organicfrenchfries.jpg';
+import organicmash from '../../images/organicmash.jpg';
+import organicsteakfries from '../../images/organicsteakfries.jpg';
+import organicwedges from '../../images/organicwedges.jpg';
+
+
 const INITIAL_STATE = {
-  items: [],
+  items: [
+    { id: 0, title: "Shoestrings", desc: "Shoestrings 7/7mm-1/4'' 2-way cook 5 kg", price: 2, img: shoestrings, discoutinuedDate: null, quantity: 0, type: 'chilled' },
+    { id: 1, title: "Fries", desc: "Fries 10/10mm-3/8'' 2-way cook 5 kg", price: 2, img: fries, discoutinuedDate: null, quantity: 0, type: 'chilled' },
+    { id: 2, title: "Belgian Fries", desc: "Belgian Fries 2 way cook 5 kg", price: 2, img: belgianfries, discoutinuedDate: null, quantity: 0, type: 'chilled' },
+    { id: 3, title: "Steak Fries", desc: "Steak Fries 10/18mm 2 way cook 5 kg", price: 2, img: steakfries, discoutinuedDate: null, quantity: 0, type: 'chilled' },
+    { id: 4, title: "Hand Cut Style-Skin", desc: "Hand Cut style skin fries 15/15mm only for fries 5 kg", price: 2, img: handcutstyle, discoutinuedDate: null, quantity: 0, type: 'chilled' },
+    { id: 5, title: "Fries", desc: "Fries 14/14mm-9/16'' 5 kg", price: 2, img: friesyellow, discoutinuedDate: null, quantity: 0, type: 'chilled' },
+    { id: 6, title: "Organic Fries", desc: "Organic Fries 12/12mm 10 x 1 kg", price: 2, img: organicfrenchfries, discoutinuedDate: null, quantity: 0, type: 'organic' },
+    { id: 7, title: "Organic Steak Fries", desc: "Fries 10/19mm 10 x 1 kg", price: 2, img: organicsteakfries, discoutinuedDate: null, quantity: 0, type: 'organic' },
+    { id: 8, title: "Organic Cubes", desc: "Organic Cubes 12/12/12mm 10 x 1 kg", price: 2, img: organiccubes, discoutinuedDate: null, quantity: 0, type: 'organic' },
+    { id: 9, title: "Organic Wedges", desc: "Wedges (cut in 8) 10 x 1 kg", price: 2, img: organicwedges, discoutinuedDate: null, quantity: 0, type: 'organic' },
+    { id: 10, title: "Organic Plain Mash", desc: "Organic Plain Mash 10 x 1 kg", price: 2, img: organicmash, discoutinuedDate: null, quantity: 0, type: 'organic' },
+    { id: 11, title: "Organic Flakes", desc: "Organic Flakes 5mm 10 x 1 kg", price: 2, img: organicflakes, discoutinuedDate: null, quantity: 0, type: 'organic' },
+  ],
   addedItems: [],
   total: 0
 };

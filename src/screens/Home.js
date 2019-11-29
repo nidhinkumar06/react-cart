@@ -13,24 +13,24 @@ class Home extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    axios.get('https://services.odata.org/V3/OData/OData.svc/Products').then(response => {
-      const cartData = map(response.data.value, (data) => {
-        return {
-          id: data.ID,
-          title: data.Name,
-          desc: data.Description,
-          price: data.Price,
-          img: data.Image || logo,
-          discoutinuedDate: data.DiscontinuedDate,
-          quantity: 0
-        };
-      });
-      store.dispatch(addItems(cartData));
-    }).catch(error => {
-      console.log('Error', error);
-    });
-  }
+  // componentDidMount() {
+  //   axios.get('https://services.odata.org/V3/OData/OData.svc/Products').then(response => {
+  //     const cartData = map(response.data.value, (data) => {
+  //       return {
+  //         id: data.ID,
+  //         title: data.Name,
+  //         desc: data.Description,
+  //         price: data.Price,
+  //         img: data.Image || logo,
+  //         discoutinuedDate: data.DiscontinuedDate,
+  //         quantity: 0
+  //       };
+  //     });
+  //     store.dispatch(addItems(cartData));
+  //   }).catch(error => {
+  //     console.log('Error', error);
+  //   });
+  // }
 
   handleClick = (id) => {
     this.props.addToCart(id);

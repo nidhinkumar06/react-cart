@@ -11,7 +11,7 @@ const Navbar = (props) => {
       <ul className="right">
         {cartItems.length > 0 && <li>Total $:{round((total), 2).toFixed(2)}</li>}
         <li>
-          <Link to="/">Shop</Link>
+          <Link to="/">Products</Link>
         </li>
         <li>
           <Link to="/cart">My cart {cartItems.length > 0 && <span className="badge white">{cartItems.length} item(s)</span>}
