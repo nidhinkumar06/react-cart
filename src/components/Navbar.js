@@ -22,7 +22,7 @@ const Navbar = (props) => {
           <Link to="/dashboard">Dashboard</Link>
         </li>
         <li className="app-link">
-          <Link to="/shop">Shop</Link>
+          <Link to="/shop?category=all">Shop</Link>
         </li>
         <li className="app-link">
           <Link to="/cart">My cart {cartItems.length > 0 && <span className="badge white">{cartItems.length} item(s)</span>}

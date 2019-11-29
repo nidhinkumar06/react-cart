@@ -1,13 +1,46 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {addToCart} from '../redux/action';
-import {isNull, size} from 'lodash';
+import {isNull, size, filter, upperFirst} from 'lodash';
 
 
 class Shop extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {items: this.props.items, search: ""};
+  }
+
+  
+  componentDidMount() {    
+    const search = this.props.location.search;
+    if (search) {
+      const filterSearch = search.split("=");
+      const filterType = filterSearch[1];
+      if (filterType !== "all") {
+        const result = filter(this.props.items, {'type':  filterType});
+      this.setState({items: result, search: filterType});
+      } else {
+        this.setState({items: this.props.items})
+      }
+    } else {
+      this.setState({ items: this.props.items, search: "" });
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const search = nextProps.location.search;
+    if (search) {
+      const filterSearch = search.split("=");
+      const filterType = filterSearch[1];
+      if (filterType !== "all") {
+        const result = filter(this.props.items, {'type':  filterType});
+      this.setState({items: result, search: filterType});
+      } else {
+        this.setState({items: this.props.items})
+      }
+    } else {
+      this.setState({ items: this.props.items, search: "" });
+    }
   }
 
   handleClick = (id) => {
@@ -15,7 +48,7 @@ class Shop extends Component {
   }
 
   render() {
-    let itemList = this.props.items.map(item => {
+    let itemList = this.state.items.map(item => {
       return (<div className="card" key={item.id}>
         <div className="card-image">
           <img src={item.img} alt={item.title}/> {
@@ -47,7 +80,7 @@ class Shop extends Component {
     })
 
     return (<div className="container">
-      <h3 className="center">Our items</h3>
+      <h3 className="center">{upperFirst(this.state.search)} Products</h3>
       <div className="box">
         {itemList}
       </div>
