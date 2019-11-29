@@ -14,14 +14,14 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get('https://my-bookshop-srv-fluent-platypus.cfapps.eu10.hana.ondemand.com/catalog/Products').then(response => {
+    axios.get('https://services.odata.org/V3/OData/OData.svc/Products').then(response => {
       const cartData = map(response.data.value, (data) => {
         return {
           id: data.ID,
           title: data.Name,
           desc: data.Description,
           price: data.Price,
-          img: logo,
+          img: data.Image || logo,
           discoutinuedDate: data.DiscontinuedDate,
           quantity: 0
         };

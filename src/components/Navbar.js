@@ -6,7 +6,7 @@ const Navbar = (props) => {
   const {cartItems, total} = props;
   return (<nav className="nav-wrapper">
     <div className="container">
-      <Link to="/" className="brand-logo">Shopping</Link>
+      <Link to="/" className="brand-logo">Lutosa Shopping</Link>
 
       <ul className="right">
         {cartItems.length > 0 && <li>Total $:{round((total), 2).toFixed(2)}</li>}
