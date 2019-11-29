@@ -16,11 +16,14 @@ class Shop extends Component {
     if (search) {
       const filterSearch = search.split("=");
       const filterType = filterSearch[1];
-      const result = filter(this.props.items, {'type':  filterType});
+      if (filterType !== "all") {
+        const result = filter(this.props.items, {'type':  filterType});
       this.setState({items: result, search: filterType});
-
+      } else {
+        this.setState({items: this.props.items})
+      }
     } else {
-      this.setState({ search: "" });
+      this.setState({ items: this.props.items, search: "" });
     }
   }
 
