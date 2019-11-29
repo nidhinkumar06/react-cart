@@ -40,7 +40,10 @@ const INITIAL_STATE = {
     { id: 11, title: "Organic Flakes", desc: "Organic Flakes 5mm 10 x 1 kg", price: 22.35, img: organicflakes, discoutinuedDate: null, quantity: 0, type: 'organic' },
     { id: 12, title: "Belgian Frites", desc: "Frites 10 x 1 kg", price: 14.95, img: frozenone, discoutinuedDate: null, quantity: 0, type: 'frozen' },
     { id: 13, title: "Frish Fries", desc: "Chilled Frish Fries", price: 10.85, img: frozentwo, discoutinuedDate: null, quantity: 0, type: 'frozen' },
-    { id: 14, title: "Pommes Stripes", desc: "Pommes Stripes 3 way cook 2.5 kg", price: 16.50, img: dehydrated, discoutinuedDate: null, quantity: 0, type: 'dehydrated' },
+    { id: 14, title: "Flakes Fries", desc: "Flakes Frish Fries", price: 5.85, img: frozenone, discoutinuedDate: null, quantity: 0, type: 'frozen' },
+    { id: 15, title: "Pommes Stripes", desc: "Pommes Stripes 3 way cook 2.5 kg", price: 16.50, img: dehydrated, discoutinuedDate: null, quantity: 0, type: 'flakes' },
+    { id: 16, title: "Pommes Stripes", desc: "Pommes Stripes 3 way cook 5 kg", price: 32.50, img: dehydrated, discoutinuedDate: null, quantity: 0, type: 'flakes' },
+    { id: 17, title: "Pommes Stripes", desc: "Pommes Stripes 3 way cook 10 kg", price: 60, img: dehydrated, discoutinuedDate: null, quantity: 0, type: 'flakes' },
   ],
   addedItems: [],
   total: 0
