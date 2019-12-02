@@ -16,6 +16,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {};    
+    console.log("this.props", this.props);
+    
   }
 
   render() {

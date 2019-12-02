@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
+import { store } from '../redux/store';
 
 const withAuthentication = () => (Component) => {
   class WithAuthentication extends React.Component {
@@ -20,7 +21,7 @@ const withAuthentication = () => (Component) => {
 
   function mapStateToProps(state) {
     return {
-      auth: state.auth
+      auth: store.getState().auth
     };
   }
 
