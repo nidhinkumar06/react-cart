@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {round} from 'lodash';
+import { compose } from 'redux';
+import withAuthentication from '../hoc/withAuthentication';
+
 
 class Recipe extends Component {
 
@@ -54,4 +57,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Recipe)
+export default compose(
+  withAuthentication(),
+  connect(mapStateToProps, mapDispatchToProps)
+)(Recipe);

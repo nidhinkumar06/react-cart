@@ -8,6 +8,8 @@ import c2 from '../images/c2.jpeg';
 import c3 from '../images/c3.jpeg';
 import c4 from '../images/c4.jpeg';
 import {Link} from 'react-router-dom';
+import { compose } from 'redux';
+import withAuthentication from '../hoc/withAuthentication';
 
 
 import logo from '../images/logo.jpg';
@@ -68,4 +70,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export default compose(
+  withAuthentication(),
+  connect(mapStateToProps, mapDispatchToProps)
+)(Home);

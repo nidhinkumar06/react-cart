@@ -5,7 +5,7 @@ import App from './App';
 import 'materialize-css/dist/css/materialize.min.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux';
-import store from './redux/store';
+import {store} from './redux/store';
 
 const Root = () => (
   <Provider store={store}>

@@ -9,6 +9,9 @@ import footerImg from '../images/footer.jpg';
 import PieCharts from './PieChart'
 
 import logo from '../images/logo.jpg';
+import { compose } from 'redux';
+import withAuthentication from '../hoc/withAuthentication';
+
 
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
@@ -91,4 +94,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+export default compose(
+  withAuthentication(),
+  connect(mapStateToProps, mapDispatchToProps)
+)(Dashboard);

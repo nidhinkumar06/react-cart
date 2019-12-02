@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 import {removeItem, addQuantity, subtractQuantity} from '../redux/action'
 import Recipe from './Recipe';
+import { compose } from 'redux';
+import withAuthentication from '../hoc/withAuthentication';
 
 class Cart extends Component {
 
@@ -73,7 +75,6 @@ const mapStateToProps = (state) => {
   console.log('state is', state);
   return {
     items: state.cart.addedItems,
-    //addedItems: state.addedItems
   }
 }
 const mapDispatchToProps = (dispatch) => {
@@ -89,4 +90,8 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+
+export default compose(
+  withAuthentication(),
+  connect(mapStateToProps, mapDispatchToProps)
+)(Cart);

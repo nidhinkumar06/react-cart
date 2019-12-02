@@ -83,3 +83,12 @@
   bottom: 20px;
   font-size: 1.5rem;
 }
+
+.login-box {
+  height: 100%;
+}
+
+.error-color {
+  color: red !important;
+  font-size: 12px;
+}

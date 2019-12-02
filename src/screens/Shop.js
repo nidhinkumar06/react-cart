@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {addToCart} from '../redux/action';
 import {isNull, size, filter, upperFirst} from 'lodash';
+import { compose } from 'redux';
+import withAuthentication from '../hoc/withAuthentication';
+
 
 
 class Shop extends Component {
@@ -116,4 +119,7 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Shop)
+export default compose(
+  withAuthentication(),
+  connect(mapStateToProps, mapDispatchToProps)
+)(Shop);
