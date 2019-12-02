@@ -16,7 +16,8 @@ class LoginForm extends Component {
              <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
                  <form onSubmit={this.props.handleSubmit}>
                     <div class="card-content">
-                       <img src={logo} className="center" />
+                       <img src={logo} className="center" style={{ paddingLeft: '30px'}} />
+                       <p style={{textAlign: "center"}}>CUSTOMER PORTAL LOGIN</p>
                        <div class="row">
                           <div class="input-field col s12">
                             <Field
