@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {HashRouter, Route, Switch} from 'react-router-dom'
+import {HashRouter, Route, Switch, withRouter} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './screens/Home'
 import Cart from './screens/Cart'
@@ -15,9 +15,7 @@ toast.configure();
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {};    
-    console.log("this.props", this.props);
-    
+    this.state = {};
   }
 
   render() {
@@ -42,5 +40,6 @@ function mapStateToProps(state) {
     auth: state.auth,
   }
 }
+
 
 export default connect(mapStateToProps)(App);
